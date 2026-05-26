@@ -5,7 +5,7 @@ import { addCart } from "../Services/allApi";
 
 
 export const StoreContext = createContext(null)
-const url = "http://localhost:5002";
+const url = "https://bitebox-backend-w9cw.onrender.com";
 const StoreContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState({});
