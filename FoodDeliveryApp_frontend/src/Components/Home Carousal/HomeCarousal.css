@@ -1,0 +1,73 @@
+.anim{
+    animation: fadeIn 3S;
+}
+.anim{
+    animation: fadeIn 3S;
+}
+
+
+
+/* Default styling for larger screens */
+.responsive-image {
+    height: 480px; 
+  }
+  
+  .carousel-caption {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 10px;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem; 
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-image {
+      height: auto; 
+      max-height: 225px; 
+    }
+  
+    .carousel-caption h1 {
+      font-size: 1rem; 
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .responsive-image {
+      height: 500px; 
+    }
+  
+    .carousel-caption h1 {
+      font-size: 1.3rem; 
+    }
+  
+    .carousel-caption .paragraph {
+        margin-top: -25px;
+      font-size: 0.7rem; 
+    }
+    .paragraph {
+    display: none;
+    }
+  }
+  
+  .image-overlay {
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20, 20, 20, 0.495); 
+    z-index: 0; 
+  }
+
