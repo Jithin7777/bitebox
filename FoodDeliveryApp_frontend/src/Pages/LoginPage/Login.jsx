@@ -39,7 +39,7 @@ const Login = () => {
 
     try {
       const result = await loginApi(userlogin);
-      if (result.status == 200) {
+      if (result.status === 200) {
         setToken(result.data.token)
         localStorage.setItem("token", result.data.token)
       }
@@ -185,15 +185,15 @@ const Login = () => {
                     Login
                   </Button>
                 </div>
-                <p className='text-center mt-3 mx-auto'>or continue with</p>
+                {/* <p className='text-center mt-3 mx-auto'>or continue with</p> */}
 
-                <div className="d-flex justify-content-center">
+                {/* <div className="d-flex justify-content-center">
                   <GoogleLogin
                     clientId="903446393348-qc31vvbaqdmkoncujocvo72qhurupeos.apps.googleusercontent.com" // Replace with your actual client ID
                     onSuccess={handleGoogleLogin}
                     onError={console.error} // Handle potential errors during Google Login flow
                   />
-                </div>
+                </div> */}
 
               </div>
             </Col>
