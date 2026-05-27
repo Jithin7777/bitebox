@@ -96,7 +96,8 @@ projectApp.use(express.json());
 /* =========================
    ROUTES
 ========================= */
-projectApp.use(router);
+// projectApp.use(router);
+projectApp.use('/', router);
 projectApp.use(foodRouter);
 projectApp.use(cartRouter);
 projectApp.use(orderRouter);
