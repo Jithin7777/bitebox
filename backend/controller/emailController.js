@@ -95,13 +95,22 @@ exports.sendEmail = async (req, res) => {
     await emailSchema.deleteMany({ email });
     await newVerification.save();
 
+    // await transporter.sendMail(mailOptions, (err, info) => {
+    //   if (err) {
+    //     res.status(403).json(err);
+    //   } else {
+    //     res.status(200).json({ OTP: otp });
+    //   }
+    // });
     await transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        res.status(403).json(err);
-      } else {
-        res.status(200).json({ OTP: otp });
-      }
-    });
+  if (err) {
+    console.error("Nodemailer Error:", err);
+    return res.status(403).json(err);
+  }
+
+  console.log("Mail Sent:", info);
+  return res.status(200).json({ OTP: otp });
+});
   } catch (err) {
     console.error("Error sending email:", err);
     res.status(500).json("Error sending email");
