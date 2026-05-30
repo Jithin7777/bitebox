@@ -4,13 +4,23 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 //create Transporter
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL_FROM,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_FROM,
     pass: process.env.EMAIL_PASS,
   },
 });
+
 
 exports.sendEmail = async (req, res) => {
   const otp = Math.floor(Math.random() * 900000) + 100000;
